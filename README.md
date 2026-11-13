@@ -4,44 +4,7 @@
 
 Hệ thống sử dụng ESP32, MPU6050 và FreeRTOS để phát hiện té ngã, truyền dữ liệu qua MQTT và giám sát, điều khiển trên giao diện Web.
 
-## Tài liệu và mã nguồn
-
-- [Tải báo cáo Word](BaoCao_Lab3/BaoCao_Lab3_De5_TranHaiNam_231432305.docx)
-- [Mã nguồn ESP32 và cấu hình Wokwi](firmware/)
-- [Giao diện Web](index.html)
-- [Ảnh trích từ báo cáo](images/)
-- [Tải bản ZIP gốc](downloads/Lab3_TranHaiNam_231432305.zip)
-- [Mở mô phỏng Wokwi](https://wokwi.com/projects/480319557418546177)
-
-## Cấu trúc repository
-
-```text
-.
-├── README.md                 # Hướng dẫn và toàn bộ nội dung báo cáo
-├── index.html                # Dashboard giám sát và điều khiển MQTT
-├── firmware/
-│   ├── sketch.ino            # Chương trình ESP32 / FreeRTOS
-│   ├── diagram.json          # Sơ đồ mạch Wokwi
-│   ├── libraries.txt         # Danh sách thư viện
-│   └── wokwi-project.txt     # Thông tin dự án mô phỏng gốc
-├── images/                   # 14 ảnh trích nguyên bản từ báo cáo Word
-├── BaoCao_Lab3/              # Báo cáo Word để tải về
-└── downloads/                # File ZIP gốc
-```
-
-## Hướng dẫn chạy
-
-1. Mở dự án Wokwi ở liên kết trên, hoặc tạo dự án ESP32 và nhập các file trong `firmware/` (giữ nguyên tên `sketch.ino`, `diagram.json`, `libraries.txt`).
-2. Kiểm tra các thư viện trong `firmware/libraries.txt`, sau đó chạy mô phỏng. Wi-Fi mặc định dùng `Wokwi-GUEST`; MQTT dùng `broker.hivemq.com:1883`.
-3. Mở `index.html` bằng trình duyệt. Nếu cần phục vụ qua HTTP, chạy `python3 -m http.server 8000` ở thư mục repository rồi mở trang trên máy đang chạy server.
-4. Web sử dụng MQTT.js từ jsDelivr và kết nối `wss://broker.hivemq.com:8884/mqtt`. Topic gốc phải khớp ESP32: `utc/lovis/de5/fall/a73c91`.
-5. Chờ thiết bị trực tuyến, theo dõi gia tốc/góc nghiêng; dùng AUTO để phát hiện té ngã hoặc MANUAL để thử LED và Buzzer. Nút Reset xóa cảnh báo đã chốt.
-
-## Báo cáo Lab 3 — Nội dung đầy đủ
-
-Nội dung dưới đây được chuyển từ file Word đính kèm; ảnh được lưu trong `images/`. Các kết quả thực nghiệm là nội dung báo cáo của tác giả.
-
----
+## Báo cáo Lab 3
 
 ## Đề 5: Thiết kế Mạch phát hiện té ngã (Fall Detection) bằng phép đo gia tốc đột ngột của cơ thể người cũng như thay đổi đột ngột về góc nghiêng. Mạch phát hiện té ngã sử dụng ESP32 đọc dữ liệu gia tốc và góc nghiêng từ cảm biến MPU6050, hiển thị dữ liệu qua giao tiếp serial. Đồng thời ESP32 gửi dữ liệu lên MQTT Broker qua Wifi và hiển thị dữ liệu trên Web/App.
 
