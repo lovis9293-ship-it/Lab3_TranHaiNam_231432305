@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Lovis - De 5 Fall Detection",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 30, "left": 10, "attrs": {} },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu",
+      "top": 195.82,
+      "left": -132.08,
+      "attrs": { "accelX": "0", "accelY": "0", "accelZ": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 34.8,
+      "left": 138.2,
+      "attrs": { "color": "red", "label": "CANH BAO" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 139.2,
+      "left": 105.05,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": -36,
+      "left": -123,
+      "attrs": { "volume": "0.2" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "mpu:VCC", "red", [] ],
+    [ "esp:D21", "mpu:SDA", "green", [] ],
+    [ "esp:D22", "mpu:SCL", "blue", [] ],
+    [ "mpu:AD0", "mpu:GND", "#8f4814", [] ],
+    [ "esp:D18", "r1:1", "orange", [] ],
+    [ "r1:2", "led:A", "orange", [] ],
+    [ "esp:D19", "buzz:2", "purple", [] ],
+    [ "buzz:1", "esp:GND.2", "black", [ "v115.2", "h96", "v19.2" ] ],
+    [ "mpu:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:GND.1", "led:C", "black", [ "h13.5", "v-92.6" ] ]
+  ],
+  "dependencies": {}
+}
