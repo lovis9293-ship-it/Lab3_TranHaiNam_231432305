@@ -4,6 +4,10 @@
 
 Hệ thống sử dụng ESP32, MPU6050 và FreeRTOS để phát hiện té ngã, truyền dữ liệu qua MQTT và giám sát, điều khiển trên giao diện Web.
 
+## Video mô phỏng
+
+[Xem hoặc tải video mô phỏng hệ thống](videos/Video_Mophong.mp4)
+
 ## Báo cáo Lab 3
 
 ## Đề 5: Thiết kế Mạch phát hiện té ngã (Fall Detection) bằng phép đo gia tốc đột ngột của cơ thể người cũng như thay đổi đột ngột về góc nghiêng. Mạch phát hiện té ngã sử dụng ESP32 đọc dữ liệu gia tốc và góc nghiêng từ cảm biến MPU6050, hiển thị dữ liệu qua giao tiếp serial. Đồng thời ESP32 gửi dữ liệu lên MQTT Broker qua Wifi và hiển thị dữ liệu trên Web/App.
