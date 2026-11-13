@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video mô phỏng · Lab 3 — Trần Hải Nam</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0d1720;color:#edf5f7}*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:48px 24px}a{color:#86e3cc;text-underline-offset:4px}.eyebrow{color:#86e3cc;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.2;margin:14px 0}p{color:#b9cbd4;line-height:1.7}.player{margin:28px 0;background:#05090d;border:1px solid #334650;border-radius:16px;overflow:hidden}video{display:block;width:100%;height:auto;max-height:75vh}.details{display:flex;gap:12px;flex-wrap:wrap;font-size:.9rem}.details span{border:1px solid #334650;border-radius:24px;padding:6px 12px}nav{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px}footer{margin-top:40px;border-top:1px solid #334650;padding-top:20px;font-size:.9rem}#error{color:#ffbdbd}a:focus-visible{outline:3px solid #86e3cc;outline-offset:6px}@media(max-width:600px){main{padding:28px 16px}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">Lab 3 · Đề 5 · ESP32 & MPU6050</div>
+<h1>Video mô phỏng hệ thống phát hiện té ngã</h1>
+<p>Trần Hải Nam · Mã sinh viên 231432305<br>Giám sát gia tốc, góc nghiêng và điều khiển cảnh báo qua MQTT.</p>
+<div class="details"><span>32 giây</span><span>MP4 · 1,3 MB</span><span>FreeRTOS · Wokwi</span></div>
+<div class="player">
+<video id="demo" controls playsinline preload="metadata" aria-label="Video mô phỏng hệ thống phát hiện té ngã">
+<source src="Video_Mophong.mp4" type="video/mp4">
+Trình duyệt không hỗ trợ video HTML5. <a href="Video_Mophong.mp4">Mở video MP4</a>.
+</video>
+</div>
+<p>Nhấn ▶ để xem video. Bạn có thể bật âm thanh, tua và mở toàn màn hình bằng thanh điều khiển.</p>
+<p id="error" role="alert" hidden>Không tải được video. Hãy thử tải lại trang hoặc mở liên kết MP4 bên dưới.</p>
+<nav aria-label="Tài liệu dự án">
+<a href="https://github.com/lovis9293-ship-it/Lab3_TranHaiNam_231432305">Xem mã nguồn & báo cáo</a>
+<a href="../BaoCao_Lab3/BaoCao_Lab3_De5_TranHaiNam_231432305.docx">Tải báo cáo Word</a>
+<a href="Video_Mophong.mp4">Mở video MP4</a>
+<a href="../index.html">Mở dashboard giám sát</a>
+</nav>
+<footer><p>Mô hình học tập phát hiện té ngã · ESP32 · MPU6050 · MQTT</p></footer>
+</main>
+<script>
+const video = document.getElementById('demo');
+const showError = () => { document.getElementById('error').hidden = false; };
+video.addEventListener('error', showError);
+video.querySelector('source').addEventListener('error', showError);
+</script>
+</body>
+</html>
