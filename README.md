@@ -6,7 +6,7 @@ Hệ thống sử dụng ESP32, MPU6050 và FreeRTOS để phát hiện té ngã
 
 ## Video mô phỏng
 
-[▶ Xem trang phát video](https://lovis9293-ship-it.github.io/Lab3_TranHaiNam_231432305/videos/)
+[▶ Xem trang phát video](https://lovis9293-ship-it.github.io/Lab3_TranHaiNam_231432305/video.html)
 
 [Xem hoặc tải video mô phỏng hệ thống](videos/Video_Mophong.mp4)
 
